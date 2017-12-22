@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27b4a78c-80f3-47ae-9426-213c2a29acfd" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../.gitignore" afterPath="$PROJECT_DIR$/../.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/Application.java" afterPath="$PROJECT_DIR$/app/controllers/Application.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myApp.ipr" afterPath="$PROJECT_DIR$/myApp.ipr" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/myApp.iws" afterPath="$PROJECT_DIR$/myApp.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../support/eclipse/INSTALL" afterPath="$PROJECT_DIR$/../support/eclipse/INSTALL" />
     </list>
     <ignored path="$PROJECT_DIR$/tmp/classes/" />
     <ignored path="$PROJECT_DIR$/../modules/docviewer/target/" />
@@ -89,8 +85,8 @@
       <file leaf-file-name="myApp.iws" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/myApp.iws">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="75">
+              <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -207,6 +203,7 @@
         <option value="$PROJECT_DIR$/conf/routes" />
         <option value="$PROJECT_DIR$/app/views/Application/upload.html" />
         <option value="$PROJECT_DIR$/app/controllers/Application.java" />
+        <option value="$PROJECT_DIR$/myApp.iws" />
       </list>
     </option>
   </component>
@@ -1045,12 +1042,20 @@
       <workItem from="1512933914326" duration="11297000" />
       <workItem from="1513336361137" duration="3480000" />
       <workItem from="1513447185455" duration="11373000" />
-      <workItem from="1513850366683" duration="19469000" />
+      <workItem from="1513850366683" duration="19521000" />
     </task>
+    <task id="LOCAL-00001" summary="fixing application">
+      <created>1513942846544</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1513942846544</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46085000" />
+    <option name="totallyTimeSpent" value="46137000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="732" extended-state="6" />
@@ -1101,7 +1106,8 @@
     </ignored-roots>
     <MESSAGE value="aaa" />
     <MESSAGE value="aaaa" />
-    <option name="LAST_COMMIT_MESSAGE" value="aaaa" />
+    <MESSAGE value="fixing application" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing application" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1469,8 +1475,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myApp.iws">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="75">
+          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
           <folding />
         </state>
       </provider>
