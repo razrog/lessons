@@ -1,0 +1,65 @@
+#{extends 'base.html'/} #{set 'moreStyles'}
+
+    #{if lessons == null || lessons.size() == 0 || lessons.isEmpty()}
+    <h2> אין שיעורים קיימים</h2>
+    #{/if}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/public/javascripts/scripts.js"></script>
+    <title>שיעורי הלכה</title>
+
+</head>
+
+#{/set}
+<body>
+
+<div class="container" style="direction: rtl">
+    <h2>הלכות שבת קודש</h2>
+    <div class="list-group">
+    #{list items:lessons, as:'entry'}
+        <div class="list-group-item">
+            <span id=${entry.getRowId()} onclick="onRowClick(${entry.getRecordId()})">
+                <span class="record_info">${entry.getName()}</span><br>
+                <span class="record_info">${entry.getDescription()}</span><br>
+                <span class="record_info">${entry.getRabbi()}</span><br>
+                <span class="record_info">${entry.getDateAdded()}</span><br>
+            </span>
+            <div id=${entry.getRecordId()} class="record">
+                <audio controls controlsList="nodownload noremoteplayback">
+                    <source src=${entry.getPathToFile()}>
+                    Your browser does not support the audio element.
+                </audio>
+
+            </div>
+        </div>
+    #{/list}
+    </div>
+
+*{<div class="table-responsive">}*
+*{<table class="table table-striped table-hover">}*
+
+*{<tbody>}*
+*{#{list items:lessons, as:'entry'}}*
+*{<tr id=${entry.getRowId()} onclick="onRowClick(${entry.getRecordId()})">}*
+*{<td>${entry.getName()}</td>}*
+*{<td>${entry.getDescription()}</td>}*
+*{</tr>}*
+*{<tr id=${entry.getRecordId()} class="record">}*
+*{<td>}*
+*{<audio controls controlsList="nofullscreen nodownload noremoteplayback">}*
+*{<source src=${entry.getPathToFile()}>}*
+*{Your browser does not support the audio element.}*
+*{</audio>}*
+*{</td>}*
+*{</tr>}*
+*{#{/list}}*
+*{</tbody>}*
+*{</table>}*
+*{</div>}*
+</div>
+
+
+</body>
