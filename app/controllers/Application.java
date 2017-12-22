@@ -3,9 +3,7 @@ package controllers;
 import models.LessonType;
 import models.Lessons;
 import play.mvc.Controller;
-import play.mvc.Http;
 
-import java.io.File;
 
 public class Application extends Controller {
 
@@ -35,15 +33,6 @@ public class Application extends Controller {
 
     public static void halacha() {
         renderArgs.put("lessons", Lessons.getLessonsFromType(LessonType.HALACHOT));
-        render();
-    }
-
-    public static void upload() {
-       render();
-    }
-
-    public static void uploadFile() {
-
         render();
     }
 }
