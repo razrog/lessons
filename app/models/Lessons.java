@@ -1,5 +1,6 @@
 package models;
 
+import play.Logger;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
@@ -57,12 +58,8 @@ public class Lessons extends Model {
         return pathToFile;
     }
 
-    private static List<Lessons> getAllLessons() {
+    static List<Lessons> getAllLessons() {
+        Logger.info("[DB] \t Sending query to DB");
         return Lessons.find("order by id").fetch();
-    }
-
-
-    public static List<Lessons> getLessonsFromType(LessonType lessonType) {
-        return getAllLessons().stream().filter(lesson -> lesson.getType().equals(lessonType.toString())).collect(Collectors.toList());
     }
 }

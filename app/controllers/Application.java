@@ -1,38 +1,39 @@
 package controllers;
 
 import models.LessonType;
-import models.Lessons;
+import models.PersistenceManager;
 import play.mvc.Controller;
 
 
 public class Application extends Controller {
 
     public static void index() {
+        PersistenceManager.getInstance();
         render();
     }
 
     public static void gmara() {
-        renderArgs.put("lessons", Lessons.getLessonsFromType(LessonType.GMARA));
+        renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(LessonType.GMARA));
         render();
     }
 
     public static void parasha() {
-        renderArgs.put("lessons", Lessons.getLessonsFromType(LessonType.PARASHA));
+        renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(LessonType.PARASHA));
         render();
     }
 
     public static void moed() {
-        renderArgs.put("lessons", Lessons.getLessonsFromType(LessonType.MOED));
+        renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(LessonType.MOED));
         render();
     }
 
     public static void avot() {
-        renderArgs.put("lessons", Lessons.getLessonsFromType(LessonType.AVOT));
+        renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(LessonType.AVOT));
         render();
     }
 
     public static void halacha() {
-        renderArgs.put("lessons", Lessons.getLessonsFromType(LessonType.HALACHOT));
+        renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(LessonType.HALACHOT));
         render();
     }
 }
