@@ -1,5 +1,7 @@
 package models;
 
+import play.Logger;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,6 +16,11 @@ public class PersistenceManager {
 
     public List<Lessons> getLessonsFromType(LessonType lessonType) {
         return lessons.stream().filter(lesson -> lesson.getType().equals(lessonType.toString())).collect(Collectors.toList());
+    }
+
+    public void initLessons(){
+        Logger.info("[DB] \t Refreshing Lessons from DB");
+        lessons = Lessons.getAllLessons();
     }
 
     public static PersistenceManager getInstance() {

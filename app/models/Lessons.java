@@ -59,7 +59,7 @@ public class Lessons extends Model {
     }
 
     static List<Lessons> getAllLessons() {
-        Logger.info("[DB] \t Sending query to DB");
+        Logger.info("[DB] \t Getting All Lessons from DB");
         return Lessons.find("order by id").fetch();
     }
 }
