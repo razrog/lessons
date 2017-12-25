@@ -9,7 +9,7 @@ GET     /halacha                              Application.halacha
 GET     /avot                                 Application.avot
 GET     /moed                                 Application.moed
 GET     /parasha                              Application.parasha
-GET     /upload                               Application.upload
+GET     /refresh                              Application.refresh
 # Ignore favicon requests
 GET     /favicon.ico                            404
 

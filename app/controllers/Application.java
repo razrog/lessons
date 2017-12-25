@@ -36,4 +36,15 @@ public class Application extends Controller {
         renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(LessonType.HALACHOT));
         render();
     }
+
+    public static void refresh(){
+        String password = request.params.get("password");
+        if(password != null && password.equals("12345678")){
+            PersistenceManager.getInstance().initLessons();
+            renderText("DB Refreshed successfully!");
+        }
+        else{
+            renderText(" 500 - DB Refresh Failed - Incorrect Password");
+        }
+    }
 }
