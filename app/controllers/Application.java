@@ -12,38 +12,25 @@ public class Application extends Controller {
         render();
     }
 
-    public static void gmara() {
-        renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(LessonType.GMARA));
-        render();
+    public static void lessons() {
+        String lessonType = request.params.get("type");
+        LessonType type = LessonType.getLessonFromString(lessonType);
+        if (type == null) {
+            error();
+        } else {
+            String title = LessonType.getTitleFromType(type);
+            renderArgs.put("pageTitle", title);
+            renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(type));
+            render();
+        }
     }
 
-    public static void parasha() {
-        renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(LessonType.PARASHA));
-        render();
-    }
-
-    public static void moed() {
-        renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(LessonType.MOED));
-        render();
-    }
-
-    public static void avot() {
-        renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(LessonType.AVOT));
-        render();
-    }
-
-    public static void halacha() {
-        renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(LessonType.HALACHOT));
-        render();
-    }
-
-    public static void refresh(){
+    public static void refresh() {
         String password = request.params.get("password");
-        if(password != null && password.equals("12345678")){
+        if (password != null && password.equals("12345678")) {
             PersistenceManager.getInstance().initLessons();
             renderText("DB Refreshed successfully!");
-        }
-        else{
+        } else {
             renderText(" 500 - DB Refresh Failed - Incorrect Password");
         }
     }
