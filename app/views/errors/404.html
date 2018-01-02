@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+#{extends 'base.html'/} #{set 'moreStyles'}
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/public/stylesheets/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/public/javascripts/scripts.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Error Page</title>
+</head>
 
-<html>
-    <head>
-        <title>Not found</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=${_response_encoding}"/>    
-    </head>
-    <body>
-        #{if play.mode.name() == 'DEV'}
-            #{404 result /}
-        #{/if}
-        #{else}
-            <h1>Not found</h1>
-            <p>
-                ${result.message}
-            </p>
-        #{/else}
-    </body>
-</html>
+#{/set}
+<body>
+
+
+<div class="container" style="direction: rtl">
+    <h1>לא נמצא העמוד!</h1>
+</div>
+</body>

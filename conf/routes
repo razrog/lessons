@@ -4,11 +4,7 @@
 
 # Home page
 GET     /                                     Application.index
-GET     /gmara                                Application.gmara
-GET     /halacha                              Application.halacha
-GET     /avot                                 Application.avot
-GET     /moed                                 Application.moed
-GET     /parasha                              Application.parasha
+GET     /lessons                              Application.lessons
 GET     /refresh                              Application.refresh
 # Ignore favicon requests
 GET     /favicon.ico                            404

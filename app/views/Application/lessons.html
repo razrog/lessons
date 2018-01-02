@@ -9,7 +9,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="/public/javascripts/scripts.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>פרקי אבות</title>
 </head>
 
 #{/set}
@@ -17,9 +16,9 @@
 
 
 <div class="container" style="direction: rtl">
-    <h2>פרקי אבות</h2>
+    <h2>${pageTitle}</h2>
     <div class="list-group">
-    <h4>(סה״כ שיעורים - ${lessons.size()})</h4>
+        <h4>(סה״כ שיעורים - ${lessons.size()})</h4>
 
     #{list items:lessons, as:'entry'}
         <div class="list-group-item" onclick="onRowClick(${entry.getRecordId()})">

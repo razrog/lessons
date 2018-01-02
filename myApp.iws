@@ -16,16 +16,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/Application/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="25" column="40" lean-forward="false" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="moed.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/Application/moed.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -82,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="myApp.iws" pinned="false" current-in-tab="true">
+      <file leaf-file-name="myApp.iws" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/myApp.iws">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+            <state relative-caret-position="225">
+              <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -94,6 +84,16 @@
       </file>
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -165,6 +165,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -1042,7 +1043,7 @@
       <workItem from="1512933914326" duration="11297000" />
       <workItem from="1513336361137" duration="3480000" />
       <workItem from="1513447185455" duration="11373000" />
-      <workItem from="1513850366683" duration="19521000" />
+      <workItem from="1513850366683" duration="19716000" />
     </task>
     <task id="LOCAL-00001" summary="fixing application">
       <created>1513942846544</created>
@@ -1051,11 +1052,25 @@
       <option name="project" value="LOCAL" />
       <updated>1513942846544</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="a">
+      <created>1513942889344</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1513942889344</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ading gitignore">
+      <created>1513942980390</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1513942980390</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46137000" />
+    <option name="totallyTimeSpent" value="46332000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="732" extended-state="6" />
@@ -1107,7 +1122,9 @@
     <MESSAGE value="aaa" />
     <MESSAGE value="aaaa" />
     <MESSAGE value="fixing application" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing application" />
+    <MESSAGE value="a" />
+    <MESSAGE value="ading gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="ading gitignore" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1120,7 +1137,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../modules/docviewer/build.xml" />
     <entry file="file://$PROJECT_DIR$/../modules/docviewer/src/play/modules/docviewer/DocumentationGenerator.java" />
     <entry file="file://$PROJECT_DIR$/../modules/docviewer/app/controllers/PlayDocumentation.java" />
     <entry file="file://$PROJECT_DIR$/../modules/docviewer/app/helpers/CheatSheetHelper.java" />
@@ -1447,14 +1463,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1475,8 +1483,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/myApp.iws">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="11" lean-forward="true" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        <state relative-caret-position="225">
+          <caret line="15" column="14" lean-forward="false" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="26" lean-forward="true" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
