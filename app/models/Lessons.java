@@ -27,6 +27,16 @@ public class Lessons extends Model {
         this.pathToFile = pathToFile;
     }
 
+    public Lessons(Integer id, String type, String name, String description, String rabbi, String dateAdded, String pathToFile) {
+        this.id = Long.parseLong(id.toString());
+        this.type = type;
+        this.name = name;
+        this.description = description;
+        this.rabbi = rabbi;
+        this.dateAdded = dateAdded;
+        this.pathToFile = pathToFile;
+    }
+
     public String getType() {
         return type;
     }
@@ -46,6 +56,7 @@ public class Lessons extends Model {
     public String getRowId() {
         return "row_id_" + getId();
     }
+
     public String getRecordId() {
         return "record_id_" + getId();
     }

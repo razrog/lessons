@@ -11,7 +11,9 @@ public class PersistenceManager {
     private static List<Lessons> lessons;
 
     private PersistenceManager() {
-        lessons = Lessons.getAllLessons();
+//        lessons = Lessons.getAllLessons(); //TODO - From DB
+        lessons = LessonsLocalDB.getInstance().getAllLessons(); //TODO - Locally;
+
     }
 
     public List<Lessons> getLessonsFromType(LessonType lessonType) {
@@ -20,7 +22,8 @@ public class PersistenceManager {
 
     public void initLessons(){
         Logger.info("[DB] \t Refreshing Lessons from DB");
-        lessons = Lessons.getAllLessons();
+//        lessons = Lessons.getAllLessons();//TODO - From DB
+        lessons = LessonsLocalDB.getInstance().getAllLessons();//TODO - Locally
     }
 
     public static PersistenceManager getInstance() {
