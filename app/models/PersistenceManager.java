@@ -11,19 +11,23 @@ public class PersistenceManager {
     private static List<Lessons> lessons;
 
     private PersistenceManager() {
-//        lessons = Lessons.getAllLessons(); //TODO - From DB
-        lessons = LessonsLocalDB.getInstance().getAllLessons(); //TODO - Locally;
+        lessons = Lessons.getAllLessons(); //TODO - From DB
+//        lessons = LessonsLocalDB.getInstance().getAllLessons(); //TODO - Locally;
 
+    }
+
+    public int getLessonsSize() {
+        return lessons.size();
     }
 
     public List<Lessons> getLessonsFromType(LessonType lessonType) {
         return lessons.stream().filter(lesson -> lesson.getType().equals(lessonType.toString())).collect(Collectors.toList());
     }
 
-    public void initLessons(){
+    public void initLessons() {
         Logger.info("[DB] \t Refreshing Lessons from DB");
-//        lessons = Lessons.getAllLessons();//TODO - From DB
-        lessons = LessonsLocalDB.getInstance().getAllLessons();//TODO - Locally
+        lessons = Lessons.getAllLessons();//TODO - From DB
+//        lessons = LessonsLocalDB.getInstance().getAllLessons();//TODO - Locally
     }
 
     public static PersistenceManager getInstance() {

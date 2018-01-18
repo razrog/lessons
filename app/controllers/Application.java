@@ -8,7 +8,7 @@ import play.mvc.Controller;
 public class Application extends Controller {
 
     public static void index() {
-        PersistenceManager.getInstance();
+        renderArgs.put("lessonsSize",PersistenceManager.getInstance().getLessonsSize());
         render();
     }
 
