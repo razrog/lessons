@@ -12,7 +12,7 @@ public class Application extends Controller {
         render();
     }
 
-    public static void lessons() {
+    public static void lessons() throws Exception {
         String lessonType = request.params.get("type");
         LessonType type = LessonType.getLessonFromString(lessonType);
         if (type == null) {
