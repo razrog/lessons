@@ -23,7 +23,6 @@
     #{list items:lessons, as:'entry'}
         <div class="list-group-item" onclick="onRowClick(${entry.getRecordId()})">
             <span id=${entry.getRowId()} >
-                <span class="record_info">${entry.getName()}</span><br>
                 <span class="record_info">${entry.getDescription()}</span><br>
                 <span class="record_info">${entry.getDateAdded()}</span><br>
             </span>

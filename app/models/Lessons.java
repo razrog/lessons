@@ -6,7 +6,6 @@ import play.db.jpa.Model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "lessons")
@@ -65,12 +64,17 @@ public class Lessons extends Model {
         return dateAdded;
     }
 
-    public String getPathToFile() {
-        return pathToFile;
+    public String getPathToFile() throws Exception {
+        if (pathToFile.startsWith("/")) {
+            return pathToFile;
+        } else {
+            LessonType lessonType = LessonType.getLessonFromString(this.type);
+            return LessonType.getPathToFileFromType(lessonType) + pathToFile;
+        }
     }
 
     static List<Lessons> getAllLessons() {
         Logger.info("[DB] \t Getting All Lessons from DB");
-        return Lessons.find("order by id").fetch();
+        return Lessons.find("order by dateAdded").fetch();
     }
 }
