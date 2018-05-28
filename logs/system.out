@@ -1,0 +1,75 @@
+Listening for transport dt_socket at address: 8000
+20:12:22,476 INFO  ~ Starting /Users/raz/dev/play/myApp
+:: loading settings :: url = jar:file:/Users/raz/dev/play-1.4.5/framework/lib/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+~ Oops, malformed dependencies.yml descriptor:
+~
+~ 	Missing revision in dependency format (use "latest.integration" to  matches all versions) -> play -> docviewer
+~
+20:12:22,817 ERROR ~ There was a problem parsing dependencies.yml (module will not be loaded in order of the dependencies.yml)
+20:12:22,821 INFO  ~ Module docviewer is available (/Users/raz/dev/play/modules/docviewer)
+20:12:23,422 WARN  ~ You're running Play! in DEV mode
+20:12:23,481 INFO  ~ Listening for HTTP on port 9000 (Waiting a first request to start) ...
+~ Server is up and running
+20:13:04,700 ERROR ~ 
+
+@76f3h6nn8
+Failed to compile template /app/views/errors/500.html
+
+Compilation error (In {module:docviewer}/app/controllers/PlayDocumentation.java around line 20)
+The file {module:docviewer}/app/controllers/PlayDocumentation.java could not be compiled. Error raised is : The type PlayDocumentation is already defined
+
+play.exceptions.CompilationException: The type PlayDocumentation is already defined
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:32)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
+20:13:04,717 ERROR ~ 
+
+@76f3h6nn7
+Internal Server Error (500) for request GET /
+
+Compilation error (In {module:docviewer}/app/controllers/PlayDocumentation.java around line 20)
+The file {module:docviewer}/app/controllers/PlayDocumentation.java could not be compiled. Error raised is : The type PlayDocumentation is already defined
+
+play.exceptions.CompilationException: The type PlayDocumentation is already defined
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.Play.start(Play.java:531)
+	at play.Play.detectChanges(Play.java:659)
+	at play.Invoker$Invocation.init(Invoker.java:209)
+	at Invocation.HTTP Request(Play!)
+20:13:04,718 ERROR ~ 
+
+@76f3h6nn9
+Error during the 500 response generation
+
+Compilation error (In {module:docviewer}/app/controllers/PlayDocumentation.java around line 20)
+The file {module:docviewer}/app/controllers/PlayDocumentation.java could not be compiled. Error raised is : The type PlayDocumentation is already defined
+
+play.exceptions.CompilationException: The type PlayDocumentation is already defined
+	at play.classloading.ApplicationCompiler$2.acceptResult(ApplicationCompiler.java:264)
+	at org.eclipse.jdt.internal.compiler.Compiler.handleInternalException(Compiler.java:678)
+	at org.eclipse.jdt.internal.compiler.Compiler.compile(Compiler.java:522)
+	at play.classloading.ApplicationCompiler.compile(ApplicationCompiler.java:300)
+	at play.classloading.ApplicationClassloader.getAllClasses(ApplicationClassloader.java:420)
+	at play.classloading.ApplicationClassloader.getAssignableClasses(ApplicationClassloader.java:466)
+	at play.templates.GroovyTemplateCompiler.endTag(GroovyTemplateCompiler.java:362)
+	at play.templates.TemplateCompiler.generate(TemplateCompiler.java:93)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:15)
+	at play.templates.GroovyTemplateCompiler.compile(GroovyTemplateCompiler.java:39)
+	at play.templates.TemplateCompiler.compile(TemplateCompiler.java:28)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:85)
+	at play.templates.TemplateLoader.load(TemplateLoader.java:180)
+	at play.server.PlayHandler.serve500(PlayHandler.java:836)
+	at Invocation.HTTP Request(Play!)
