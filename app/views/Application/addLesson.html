@@ -1,0 +1,137 @@
+#{extends 'base.html'/} #{set 'moreStyles'}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<meta name="google-site-verification" content="3oyKrSEX0haiu7HWOno-bgJrza3caZCWfoN2N0zffUo"/>
+#{/set}
+
+
+
+<h1>שיעור חדש</h1>
+
+<div style="text-align: left">
+    <center>
+        <table style="width: 60%" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Attribute</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>ID:</td>
+                <td><input id="lessonId" value="${lessonId}" type="text" name="ID"/></td>
+            </tr>
+            <tr>
+                <td>type:</td>
+                <td>
+                    <select id="lessonType" name="type">
+                        <option name="type" value="0">בחר סוג שיעור</option>
+                        <option name="type" value="HALACHA">הלכות</option>
+                        <option name="type" value="GMARA">גמרא</option>
+                        <option name="type" value="MUSAR">מוסר</option>
+                        <option name="type" value="AVOT">פרקי אבות</option>
+                        <option name="type" value="PARASHA">פרשת השבוע</option>
+                        <option name="type" value="MOED">מועד</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>name:</td>
+                <td><input id="lessonName" type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td>description:</td>
+                <td><input id="lessonDescription" type="text" name="description"></td>
+            </tr>
+            <tr>
+                <td>rabbi:</td>
+                <td><input id="lessonRabbi" type="text" name="rabbi"></td>
+            </tr>
+            <tr>
+                <td>date added:</td>
+                <td><input id="lessonDate" type="date" name="date"></td>
+            </tr>
+            <tr>
+                <td>path to file:</td>
+                <td><input id="lessonFilePath" type="text" name="pathToFile"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center"><input type="submit" onclick="addLesson()"></td>
+            </tr>
+            </tbody>
+            <!--the alignment to the table is not working. I used a center label insted wich works... Maneged to align the body label(doesen't it soupose to apply to the table??) -->
+        </table>
+    </center>
+</div>
+
+
+<script>
+
+    function confirmAdding() {
+        var lessonId = $("#lessonId").val();
+        var lessonType = $("#lessonType").val();
+        var lessonName = $("#lessonName").val();
+        var lessonDescription = $("#lessonDescription").val();
+        var lessonRabbi = $("#lessonRabbi").val();
+        var lessonDate = $("#lessonDate").val();
+        var lessonFilePath = $("#lessonFilePath").val();
+
+        return confirm("Please Validate And confirm values\n"
+                + "Lesson Id [" + lessonId + "]\n"
+                + "lessonType [" + lessonType + "]\n"
+                + "lessonName [" + lessonName + "]\n"
+                + "lessonDescription [" + lessonDescription + "]\n"
+                + "lessonRabbi [" + lessonRabbi + "]\n"
+                + "lessonDate [" + lessonDate + "]\n"
+                + "lessonFilePath [" + lessonFilePath + "]\n"
+        ) == true;
+    }
+
+
+    function addLesson() {
+        var lessonId = $("#lessonId").val();
+        var lessonType = $("#lessonType").val();
+        var lessonName = $("#lessonName").val();
+        var lessonDescription = $("#lessonDescription").val();
+        var lessonRabbi = $("#lessonRabbi").val();
+        var lessonDate = $("#lessonDate").val();
+        var lessonFilePath = $("#lessonFilePath").val();
+
+        console.log(" Sending request with params [" + lessonId + "]" + "[" + lessonName + "]"
+                + "[" + lessonRabbi + "]" + "[" + lessonDate + "]"
+                + "[" + lessonFilePath + "]" + "[" + lessonType + "]"
+                + "[" + lessonName + "]"
+        );
+
+        if (confirmAdding()) {
+            $.ajax({
+                type: 'GET',
+                url: "/addNewLesson",
+                timeout: 300000,
+                data: jQuery.param(
+                        {
+                            lessonId: lessonId,
+                            lessonType: lessonType,
+                            lessonName: lessonName,
+                            lessonDescription: lessonDescription,
+                            lessonRabbi: lessonRabbi,
+                            lessonDate: lessonDate,
+                            lessonFilePath: lessonFilePath
+                        }
+                ),
+                success: function (response) {
+                    console.log(response);
+                    alert('New Lesson was added');
+                    window.location.reload();
+                },
+                error: function (response) {
+                    console.log("Error response[" + response + "]");
+                    alert('Failed to add new Lesson');
+                }
+            });
+        }
+    }
+
+</script>

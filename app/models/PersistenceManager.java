@@ -11,13 +11,17 @@ public class PersistenceManager {
     private static List<Lessons> lessons;
 
     private PersistenceManager() {
-        lessons = Lessons.getAllLessons(); //TODO - From DB
+        lessons = Lessons.getAllLessons();
 //        lessons = LessonsLocalDB.getInstance().getAllLessons(); //TODO - Locally;
 
     }
 
     public int getLessonsSize() {
         return lessons.size();
+    }
+
+    public Long getLessonsLastId() {
+        return Lessons.getLastId().getId();
     }
 
     public List<Lessons> getLessonsFromType(LessonType lessonType) {

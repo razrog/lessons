@@ -1,6 +1,7 @@
 package controllers;
 
 import models.LessonType;
+import models.Lessons;
 import models.PersistenceManager;
 import play.mvc.Controller;
 
@@ -8,7 +9,7 @@ import play.mvc.Controller;
 public class Application extends Controller {
 
     public static void index() {
-        renderArgs.put("lessonsSize",PersistenceManager.getInstance().getLessonsSize());
+        renderArgs.put("lessonsSize", PersistenceManager.getInstance().getLessonsSize());
         render();
     }
 
@@ -23,6 +24,16 @@ public class Application extends Controller {
             renderArgs.put("lessons", PersistenceManager.getInstance().getLessonsFromType(type));
             render();
         }
+    }
+
+    public static void addLesson() {
+        Long lessonsLastId = PersistenceManager.getInstance().getLessonsLastId();
+        renderArgs.put("lessonId", lessonsLastId + 5);
+        render();
+    }
+
+    public static void addNewLesson(String lessonId, String lessonType, String lessonName, String lessonDescription, String lessonRabbi, String lessonDate, String lessonFilePath) {
+        Lessons.addOrUpdateLesson(Long.parseLong(lessonId), lessonType, lessonName, lessonDescription, lessonRabbi, lessonDate, lessonFilePath);
     }
 
     public static void refresh() {

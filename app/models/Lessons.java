@@ -1,6 +1,7 @@
 package models;
 
 import play.Logger;
+import play.db.jpa.JPA;
 import play.db.jpa.Model;
 
 import javax.persistence.Entity;
@@ -12,10 +13,13 @@ import java.util.List;
 public class Lessons extends Model {
     public String type;
     public String name;
-    private String description;
-    private String rabbi;
-    private String dateAdded;
-    private String pathToFile;
+    public String description;
+    public String rabbi;
+    public String dateAdded;
+    public String pathToFile;
+
+    public Lessons() {
+    }
 
     public Lessons(String type, String name, String description, String rabbi, String dateAdded, String pathToFile) {
         this.type = type;
@@ -76,5 +80,23 @@ public class Lessons extends Model {
     static List<Lessons> getAllLessons() {
         Logger.info("[DB] \t Getting All Lessons from DB");
         return Lessons.find("order by dateAdded").fetch();
+    }
+
+    static Lessons getLastId() {
+        Logger.info("[DB] \t Getting Last Id");
+        return (Lessons) Lessons.find("order by id desc").fetch().get(0);
+    }
+
+    public static void addOrUpdateLesson(Long id, String type, String name, String description, String rabbi, String dateAdded, String pathToFile) {
+        JPA.startTx(JPA.DEFAULT, false);
+        Lessons newLesson = new Lessons();
+        newLesson.type = type;
+        newLesson.name = name;
+        newLesson.description = description;
+        newLesson.rabbi = rabbi;
+        newLesson.dateAdded = dateAdded;
+        newLesson.pathToFile = pathToFile;
+        newLesson.save();
+        JPA.closeTx(JPA.DEFAULT);
     }
 }
